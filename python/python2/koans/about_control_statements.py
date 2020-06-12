@@ -7,33 +7,22 @@ from runner.koan import *
 class AboutControlStatements(Koan):
 
     def test_if_then_else_statements(self):
-        if True:
-            result = 'true value'
-        else:
-            result = 'false value'
+        result = 'true value'
         self.assertEqual('true value', result)
 
     def test_if_then_statements(self):
         result = 'default value'
-        if True:
-            result = 'true value'
+        result = 'true value'
         self.assertEqual('true value', result)
 
     def test_if_then_elif_else_statements(self):
-        if False:
-            result = 'first value'
-        elif True:
-            result = 'true value'
-        else:
-            result = 'default value'
+        result = 'true value'
         self.assertEqual('true value', result)
 
     def test_while_statement(self):
-        i = 1
         result = 1
-        while i <= 10:
-            result = result * i
-            i += 1
+        for i in range(1, 11):
+            result *= i
         self.assertEqual(3628800, result)
 
     def test_break_statement(self):
@@ -41,7 +30,7 @@ class AboutControlStatements(Koan):
         result = 1
         while True:
             if i > 10: break
-            result = result * i
+            result *= i
             i += 1
         self.assertEqual(3628800, result)
 
@@ -56,9 +45,7 @@ class AboutControlStatements(Koan):
 
     def test_for_statement(self):
         phrase = ["fish", "and", "chips"]
-        result = []
-        for item in phrase:
-            result.append(item.upper())
+        result = [item.upper() for item in phrase]
         self.assertEqual(["FISH", "AND", "CHIPS"], result)
 
     def test_for_statement_with_tuples(self):
@@ -68,11 +55,8 @@ class AboutControlStatements(Koan):
             ("Robin", "Blue! I mean Green!"),
             ("Arthur", "Is that an African Swallow or Amazonian Swallow?")
         ]
-        result = []
-        for knight, answer in round_table:
-            result.append("Contestant: '" + knight + \
-            "'   Answer: '" + answer + "'")
-
+        result = ["Contestant: '" + knight + \
+            "'   Answer: '" + answer + "'" for knight, answer in round_table]
         text = "Contestant: 'Robin'   Answer: 'Blue! I mean Green!'"
 
         self.assertMatch(text, result[2])

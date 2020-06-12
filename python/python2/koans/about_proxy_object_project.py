@@ -131,10 +131,7 @@ class Television(object):
         self._channel = value
 
     def power(self):
-        if self._power == 'on':
-            self._power = 'off'
-        else:
-            self._power = 'on'
+        self._power = 'off' if self._power == 'on' else 'on'
 
     def is_on(self):
         return self._power == 'on'

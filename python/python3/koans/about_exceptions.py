@@ -51,7 +51,6 @@ class AboutExceptions(Koan):
             pass
         except RuntimeError:
             result = 'it broke'
-            pass
         else:
             result = 'no damage done'
 

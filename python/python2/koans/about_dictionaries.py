@@ -10,7 +10,7 @@ from runner.koan import *
 
 class AboutDictionaries(Koan):
     def test_creating_dictionaries(self):
-        empty_dict = dict()
+        empty_dict = {}
         self.assertEqual(dict, type(empty_dict))
         self.assertEqual(dict(), empty_dict)
         self.assertEqual(0, len(empty_dict))
@@ -27,9 +27,7 @@ class AboutDictionaries(Koan):
         self.assertEqual('dos', babel_fish['two'])
 
     def test_changing_dictionaries(self):
-        babel_fish = {'one': 'uno', 'two': 'dos'}
-        babel_fish['one'] = 'eins'
-
+        babel_fish = {'two': 'dos', 'one': 'eins'}
         expected = {'two': 'dos', 'one': 'eins'}
         self.assertEqual(expected, babel_fish)
 
@@ -43,9 +41,9 @@ class AboutDictionaries(Koan):
         babel_fish = {'one': 'uno', 'two': 'dos'}
         self.assertEqual(2, len(babel_fish.keys()))
         self.assertEqual(2, len(babel_fish.values()))
-        self.assertEqual(True, 'one' in babel_fish.keys())
+        self.assertEqual(True, 'one' in babel_fish)
         self.assertEqual(False, 'two' in babel_fish.values())
-        self.assertEqual(False, 'uno' in babel_fish.keys())
+        self.assertEqual(False, 'uno' in babel_fish)
         self.assertEqual(True, 'dos' in babel_fish.values())
 
     def test_making_a_dictionary_from_a_sequence_of_keys(self):

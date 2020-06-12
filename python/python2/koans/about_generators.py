@@ -14,11 +14,9 @@ from runner.koan import *
 class AboutGenerators(Koan):
 
     def test_generating_values_on_the_fly(self):
-        result = list()
         bacon_generator = (n + ' bacon' for \
                 n in ['crunchy', 'veggie', 'danish'])
-        for bacon in bacon_generator:
-            result.append(bacon)
+        result = [bacon for bacon in bacon_generator]
         self.assertEqual(['crunchy bacon', 'veggie bacon', 'danish bacon'], result)
 
     def test_generators_are_different_to_list_comprehensions(self):
@@ -55,7 +53,7 @@ class AboutGenerators(Koan):
         yield 'jelly'
 
     def test_generator_method_will_yield_values_during_iteration(self):
-        result = list()
+        result = []
         for item in self.simple_generator_method():
             result.append(item)
         self.assertEqual(['peanut', 'butter', 'and', 'jelly'], result)

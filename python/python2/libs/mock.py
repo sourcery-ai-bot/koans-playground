@@ -217,7 +217,7 @@ class _patch(object):
             except AttributeError:
                 # for instances of classes with slots, they have no __dict__
                 original = getattr(target, name)
-        elif not create and not hasattr(target, name):
+        elif not (create or hasattr(target, name)):
             raise AttributeError("{0!s} does not have the attribute {1!r}".format(target, name))
         return original
 

@@ -84,8 +84,7 @@ class AboutScope(Koan):
     def local_access(self):
         stuff = 'eels'
         def from_the_league():
-            stuff = 'this is a local shop for local people'
-            return stuff
+            return 'this is a local shop for local people'
         return from_the_league()
 
     def nonlocal_access(self):

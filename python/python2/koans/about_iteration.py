@@ -9,10 +9,7 @@ class AboutIteration(Koan):
     def test_iterators_are_a_type(self):
         it = iter(range(1, 6))
 
-        fib = 0
-
-        for num in it:
-            fib += num
+        fib = sum(it)
 
         self.assertEqual(15, fib)
 
@@ -88,9 +85,6 @@ class AboutIteration(Koan):
     # ------------------------------------------------------------------
 
     def test_use_pass_for_iterations_with_no_body(self):
-        for num in range(1, 5):
-            pass
-
         self.assertEqual(4, num)
 
     # ------------------------------------------------------------------

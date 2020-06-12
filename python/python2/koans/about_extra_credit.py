@@ -57,7 +57,7 @@ class Player(object):
             self.points + points > Game.FINAL_CAP,
         ]
 
-        return not (True in stop)
+        return True not in stop
 
 class Game(object):
     "Represents a game of Greed."

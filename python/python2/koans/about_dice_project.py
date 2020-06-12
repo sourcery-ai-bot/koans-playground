@@ -15,7 +15,7 @@ class DiceSet(object):
         return self._values
 
     def roll(self, n):
-        self._values = [random.randint(1, 6) for i in range(0, n)]
+        self._values = [random.randint(1, 6) for i in range(n)]
 
 
 class AboutDiceProject(Koan):

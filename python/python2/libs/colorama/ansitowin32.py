@@ -180,10 +180,7 @@ class AnsiToWin32(object):
             func = winterm.erase_data
             func(params, on_stderr=self.on_stderr)
         elif command == 'A':
-            if params == () or params == None:
-                num_rows = 1
-            else:
-                num_rows = params[0]
+            num_rows = 1 if params == () or params is None else params[0]
             func = winterm.cursor_up
             func(num_rows, on_stderr=self.on_stderr)
 

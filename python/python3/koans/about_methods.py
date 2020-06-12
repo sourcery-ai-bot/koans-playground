@@ -109,7 +109,6 @@ class AboutMethods(Koan):
         "You"
         "shall"
         "not"
-        pass
         self.assertEqual(____, "Still got to this line" != None)
 
     # ------------------------------------------------------------------

@@ -10,12 +10,12 @@ from runner.koan import *
 
 class AboutLists(Koan):
     def test_creating_lists(self):
-        empty_list = list()
+        empty_list = []
         self.assertEqual(list, type(empty_list))
         self.assertEqual(0, len(empty_list))
 
     def test_list_literals(self):
-        nums = list()
+        nums = []
         self.assertEqual([], nums)
 
         nums[0:] = [1]
@@ -72,9 +72,7 @@ class AboutLists(Koan):
         self.assertEqual(['Arthur', 'you', 'shall', 'not', 'pass'], knight)
 
     def test_popping_lists(self):
-        stack = [10, 20, 30, 40]
-        stack.append('last')
-
+        stack = [10, 20, 30, 40, 'last']
         self.assertEqual([10, 20, 30, 40, 'last'], stack)
 
         popped_value = stack.pop()

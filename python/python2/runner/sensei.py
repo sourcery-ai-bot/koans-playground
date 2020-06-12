@@ -58,7 +58,7 @@ class Sensei(MockableTestResult):
         MockableTestResult.addFailure(self, test, err)
 
     def sortFailures(self, testClassName):
-        table = list()
+        table = []
         for test, err in self.failures:
             if helper.cls_name(test) ==  testClassName:
                 m = re.search("(?<= line )\d+" ,err)
@@ -194,45 +194,45 @@ class Sensei(MockableTestResult):
             zenness = "";
             if turn == 0:
                 zenness = "Beautiful is better than ugly."
-            elif turn == 1 or turn == 2:
+            elif turn in [1, 2]:
                 zenness = "Explicit is better than implicit."
-            elif turn == 3 or turn == 4:
+            elif turn in [3, 4]:
                 zenness = "Simple is better than complex."
-            elif turn == 5 or turn == 6:
+            elif turn in [5, 6]:
                 zenness = "Complex is better than complicated."
-            elif turn == 7 or turn == 8:
+            elif turn in [7, 8]:
                 zenness = "Flat is better than nested."
-            elif turn == 9 or turn == 10:
+            elif turn in [9, 10]:
                 zenness = "Sparse is better than dense."
-            elif turn == 11 or turn == 12:
+            elif turn in [11, 12]:
                 zenness = "Readability counts."
-            elif turn == 13 or turn == 14:
+            elif turn in [13, 14]:
                 zenness = "Special cases aren't special enough to " \
                           "break the rules."
-            elif turn == 15 or turn == 16:
+            elif turn in [15, 16]:
                 zenness = "Although practicality beats purity."
-            elif turn == 17 or turn == 18:
+            elif turn in [17, 18]:
                 zenness = "Errors should never pass silently."
-            elif turn == 19 or turn == 20:
+            elif turn in [19, 20]:
                 zenness = "Unless explicitly silenced."
-            elif turn == 21 or turn == 22:
+            elif turn in [21, 22]:
                 zenness = "In the face of ambiguity, refuse the " \
                           "temptation to guess."
-            elif turn == 23 or turn == 24:
+            elif turn in [23, 24]:
                 zenness = "There should be one-- and preferably only " \
                           "one --obvious way to do it."
-            elif turn == 25 or turn == 26:
+            elif turn in [25, 26]:
                 zenness = "Although that way may not be obvious at " \
                           "first unless you're Dutch."
-            elif turn == 27 or turn == 28:
+            elif turn in [27, 28]:
                 zenness = "Now is better than never."
-            elif turn == 29 or turn == 30:
+            elif turn in [29, 30]:
                 zenness = "Although never is often better than right " \
                           "now."
-            elif turn == 31 or turn == 32:
+            elif turn in [31, 32]:
                 zenness = "If the implementation is hard to explain, " \
                           "it's a bad idea."
-            elif turn == 33 or turn == 34:
+            elif turn in [33, 34]:
                 zenness = "If the implementation is easy to explain, " \
                           "it may be a good idea."
             else:

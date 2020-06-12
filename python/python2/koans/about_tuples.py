@@ -60,11 +60,9 @@ class AboutTuples(Koan):
         locations = [
             ("Illuminati HQ", (38, 52, 15.56, 'N'), (77, 3, 21.46, 'W')),
             ("Stargate B", (41, 10, 43.92, 'N'), (1, 49, 34.29, 'W')),
+            ("Cthulhu", (26, 40, 1, 'N'), (70, 45, 7, 'W')),
         ]
 
-        locations.append(
-            ("Cthulhu", (26, 40, 1, 'N'), (70, 45, 7, 'W'))
-        )
 
         self.assertEqual("Cthulhu", locations[2][0])
         self.assertEqual(15.56, locations[0][1][2])
